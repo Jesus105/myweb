@@ -1,3 +1,20 @@
+var database = firebase.database();
+var productsRef = database.ref("/messages")
+var dbContent;
+
+const get_message = () =>{
+	let name = $("#Name").val()
+	let mail = $("#e-mail").val()
+	let subject = $("#subject").val()
+	let message = $("#message").val()
+
+	let newmessage ={name, mail, subject, message}
+	productsRef.push(newmessage)
+	console.log(newmessage);
+	alert("Message recived")
+	
+}
+ 
  AOS.init({
  	duration: 800,
  	easing: 'slide'
